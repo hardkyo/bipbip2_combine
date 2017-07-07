@@ -5,7 +5,7 @@ function mvreplyArticle(seq) {
 
 function getReplyArticleData(seq) {
 	var replyArticleInfo = "act=mvreply&seq=" + seq;
-	sendRequest("/bipbip1/freeboard", replyArticleInfo, receiveReplyArticleData, "GET");
+	sendRequest("/bipbip2_combine/freeboard", replyArticleInfo, receiveReplyArticleData, "GET");
 }
 
 function receiveReplyArticleData() {
@@ -14,7 +14,7 @@ function receiveReplyArticleData() {
 			var data = httpRequest.responseText;
 			viewReplyArticleData(data);
 		} else {
-			alert("¹®Á¦¹ß»ý: " + httpRequest.status);
+			alert("ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½: " + httpRequest.status);
 		}
 	}
 }
@@ -44,7 +44,7 @@ function mvmodifyArticle(seq) {
 
 function getModifyArticleData(seq) {
 	var modifyArticleInfo = "act=mvmodify&seq=" + seq;
-	sendRequest("/bipbip1/freeboard", modifyArticleInfo, receiveModifyArticleData, "GET");
+	sendRequest("/bipbip2_combine/freeboard", modifyArticleInfo, receiveModifyArticleData, "GET");
 }
 
 function receiveModifyArticleData() {
@@ -54,7 +54,7 @@ function receiveModifyArticleData() {
 			var data = httpRequest.responseText;
 			viewModifyArticleData(data);
 		} else {
-			alert("¹®Á¦¹ß»ý: " + httpRequest.status);
+			alert("ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½: " + httpRequest.status);
 		}
 	}
 }
@@ -64,7 +64,7 @@ function viewModifyArticleData(data) {
 	// var subject = data.getElementsByTagName("subject")[0].firstChild.data;
 	// var content = data.getElementsByTagName("content")[0].childNodes;
 
-	// plainÀ¸·Î ¹Þ¾Æ¿Ã ¶§!
+	// plainï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½!
 	var strArray = data.split('###');
 	var subject = strArray[0];
 	var content = strArray[1];

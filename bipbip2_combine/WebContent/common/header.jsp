@@ -4,7 +4,7 @@
 	String root = request.getContextPath();
 	MemberDto memberDto = (MemberDto) session.getAttribute("loginInfo");
 %>
-<script type="text/javascript" src="/bipbip1/js/myajax.js"></script>
+<script type="text/javascript" src="/bipbip2_combine/js/myajax.js"></script>
 <script type="text/javascript">
 var view;
 var flag = false;
@@ -72,7 +72,7 @@ var root = "<%=request.getContextPath()%>";
 			alert("비밀번호를 입력해주세요!");
 			return;
 		} else {
-			document.loginform.action = "/bipbip1/member";
+			document.loginform.action = "/bipbip2_combine/member";
 			document.loginform.submit();
 		}
 	}
@@ -91,7 +91,7 @@ var root = "<%=request.getContextPath()%>";
 			alert("비밀번호가 일치하지 않습니다.!");
 			return;  
 		} else {
-			document.joinform.action = "/bipbip1/member";
+			document.joinform.action = "/bipbip2_combine/member";
 			document.joinform.submit();
 		}	
 	}
@@ -104,7 +104,7 @@ var root = "<%=request.getContextPath()%>";
 			view.innerHTML = "<font color='orange'>아이디는 5자이상 16자이하입니다.</font>";
 		} else {
 			var param = "act=idsearch&id=" + encodeURI(idval);
-			sendRequest("/bipbip1/member", param, idresult, "GET");
+			sendRequest("/bipbip2_combine/member", param, idresult, "GET");
 		}
 	}
 
@@ -157,7 +157,7 @@ var root = "<%=request.getContextPath()%>";
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/bipbip1/admin?act=main"><strong>Bike</strong></a>
+						<a class="navbar-brand" href="/bipbip2_combine/admin?act=main"><strong>Bike</strong></a>
 					</div>
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -340,4 +340,4 @@ var root = "<%=request.getContextPath()%>";
 		</div>
 	</div>
 	
-<script src="/bipbip1/js/search.min.js"></script>
+<script src="/bipbip2_combine/js/search.min.js"></script>

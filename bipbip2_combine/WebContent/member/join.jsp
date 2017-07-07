@@ -3,7 +3,7 @@
 <%
 	String root = request.getContentType();
 %>
-<script type="text/javascript" src="/bipbip1/js/myajax.js"></script>
+<script type="text/javascript" src="/bipbip2_combine/js/myajax.js"></script>
 
 
 <!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
@@ -28,7 +28,7 @@ function join(){
 		
 		return;  
 	} else {
-		document.joinform.action = "/bipbip1/member";
+		document.joinform.action = "/bipbip2_combine/member";
 		document.joinform.submit();
 	}	
 }
@@ -41,7 +41,7 @@ function idcheck(){
 		view.innerHTML = "<font color='orange'>아이디는 5자이상 16자이하입니다.</font>";
 	} else {
 		var param = "act=idsearch&id=" + encodeURI(idval);
-		sendRequest("/bipbip1/member", param, idresult, "GET");
+		sendRequest("/bipbip2_combine/member", param, idresult, "GET");
 	}
 }
 

@@ -16,7 +16,7 @@
 			alert("비밀번호를 입력해주세요!");
 			return;
 		} else {
-			document.loginform.action = "/bipbip1/member";
+			document.loginform.action = "/bipbip2_combine/member";
 			document.loginform.submit();
 		}
 	}

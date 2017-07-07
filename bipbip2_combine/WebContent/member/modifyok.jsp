@@ -8,7 +8,7 @@ if(memberDto != null) {
 
 %>
 <script type="text/javascript">
-	location.href = "/bipbip1/index.jsp";
+	location.href = "/bipbip2_combine/index.jsp";
 </script>
 
 <%

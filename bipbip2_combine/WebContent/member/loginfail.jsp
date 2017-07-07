@@ -19,7 +19,7 @@
 		<h3 style="padding: 30px">
 			아이디 또는 비밀번호가 틀렸습니다.<br> <br> 아이디 또는 비밀번호 확인 후 다시 로그인하세요.
 		</h3>
-		<br> <a href="/bipbip1/admin?act=main"><input
+		<br> <a href="/bipbip2_combine/admin?act=main"><input
 			type="submit" class="btn btn-primary " value="메인 페이지로 이동"></a>
 
 

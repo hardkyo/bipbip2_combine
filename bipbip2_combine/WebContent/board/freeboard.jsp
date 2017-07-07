@@ -85,7 +85,7 @@ if (list != null) {
 														for (int i=0; i<dto.getLev(); i++) {%>
 															&nbsp;&nbsp;
 														<%}%>
-													<img src="/bipbip1/img/indent.JPG" width="17" height="17" >
+													<img src="/bipbip2_combine/img/indent.JPG" width="17" height="17" >
 													<%}%>
 													<a id="article-view" class="memo-article" href="javascript:viewArticle('<%=dto.getSeq()%>');">													
 														<nobr><%=dto.getSubject()%>&nbsp;&nbsp;</nobr>
@@ -300,7 +300,7 @@ if (list != null) {
 %>
 <script>
 alert("부적절한 URL 접근입니다.");
-document.location.href = "/bipbip1/index.jsp";
+document.location.href = "/bipbip2_combine/index.jsp";
 </script>
 <%
 }

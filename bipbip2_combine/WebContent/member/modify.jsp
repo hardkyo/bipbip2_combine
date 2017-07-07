@@ -14,7 +14,7 @@ function modify(){
 		alert("비밀번호 입력!");
 		return;
 	} else {
-		document.modiform.action = "/bipbip1/member";
+		document.modiform.action = "/bipbip2_combine/member";
 		document.modiform.submit();
 	}
 }

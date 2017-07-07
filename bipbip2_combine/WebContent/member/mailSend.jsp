@@ -56,7 +56,7 @@ try{
     return;
 }
  
-out.println("<script>alert('문의사항이 전달 되었습니다.');location.href='/bipbip1/index.jsp';</script>");
+out.println("<script>alert('문의사항이 전달 되었습니다.');location.href='/bipbip2_combine/index.jsp';</script>");
 // 성공 시
 %>
 
