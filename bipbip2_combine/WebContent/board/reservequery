@@ -1,0 +1,115 @@
+/*
+function memolist(xhr) {
+	$('#memotbody').empty();
+	
+	if ($(xhr).find("status").text() == 'true') {
+		$(xhr).find("memo").each(function (idx, memo) {
+			var form = 
+				$("<form>").attr("class", "form-horizontal").attr("id", "memoform")
+				.append($('<div>').attr("class", "container-fluid").attr("id", "memocontainer"));
+			///
+			var memoDiv = 
+				form
+				.append($('<div>').attr("class", "row form-group").css({"width":"100%", "text-align":"left", "margin-bottom":".5%"}));
+			
+			var memoid = 
+				memoDiv
+				.append($('<div>').attr("class", "col-md-2").attr("id", "memoid").html($(memo).find("id").text()));
+			var memocontent = 
+				memoDiv
+				.append($('<div>').attr("class", "col-md-7").css({"word-break":"break-all"}).attr("id", "memocontent").html($(memo).find("mcontent").text()));
+			var memotime = 
+				memoDiv
+				.append($('<div>').attr("class", "col-md-2").attr("id", "memotime").html($(memo).find("mtime").text()));
+			var memoreplybtn = 
+				memoDiv
+				.append($('<div>').attr("class", "col-md-1").attr("id", "memoreplybtn"))
+				.append($('<a>').attr("href", "").attr("class", "memoreplybtn"));
+			
+			var memobtnglyphy = 
+				memoreplybtn
+				.append($('<span>').attr("class", "glyphicon glyphicon-plus"))
+			var memobtntext = 
+				memoreplybtn
+				.append($('<font>').attr("size", "1px").html("´ñ±Û"));
+			
+			
+			//////
+			var modifyDiv = 
+				form
+				.append($("<div>").attr("id", "modifyDiv").attr("class", "container form-group").css({"width":"100%", "display":"block", "margin-top":".5%"}))
+				.append($("<div>").attr("class", "col-md-12"))
+				.append($("<textarea>").attr("class", "form-control").attr("row", "5").attr("memo-modify-textarea"));
+			
+	
+			
+			//////////
+			var memobtnDiv = 
+				form
+				.append($("<div>").attr("class", "row form-group").css({"width":"100%"}));		
+			var memobtninnerdiv = 
+				memobtnDiv
+				.append($('<div>').attr("id", "memobtninnerdiv").attr("class", "col-sm-offset-8 col-sm-4").css({"text-align":"right"}));
+			var btnmodifymemo = 
+				memobtninnerdiv
+				.append($('<div>').attr("id", "btn-modify-memo").attr("class", "btn btn-default").html("ï¿½ï¿½ï¿½ï¿½"));
+			var btndeletememo = 
+				memobtninnerdiv
+				.append($('div').attr("id", "btn-delete-memo").attr("display", "inline-block").html("ï¿½ï¿½ï¿½ï¿½"));
+			
+			form.appendTo("#memolist");
+		});
+	}	
+}
+*/
+<%-- function memolist(xhr) {
+	$('#memotbody').empty();
+		if($(xhr).find("status").text() == "true") {
+			$(xhr).find("memo").each(function(idx, memo) {
+				var tr = $("<tr>")
+					.append($("<td>").css("width", "10%").attr("class", "memolist").attr("align", "right").html($(memo).find("id").text()))
+					.append($("<td>").css("width", "66%").attr("class", "memolist").html($(memo).find("mcontent").text()))
+					.append($("<td>").css("width", "14%").attr("class", "memolist").attr("align", "center").html($(memo).find("mtime").text()));
+				if($(memo).find("id").text() == '<%=memberDto.getId()%>'){
+					tr.append($("<td>").css("width", "5%").attr("align", "center").html("<button class='modiBtn'>ï¿½ï¿½ï¿½ï¿½</button>"))
+					.append($("<td>").css("width", "5%").attr("align", "center").html("<button class='delBtn'>ï¿½ï¿½ï¿½ï¿½</button>"));
+			}
+			tr.appendTo("#memotbody");
+		});
+	}
+} --%>
+
+
+
+
+===========================
+$(document).ready(function () {
+	$('#memobtn').on("click", function () {
+		var content = $('#mcontent').val(); //¼±ÅÃ
+		$('#mcontent').val(''); // '' ·Î µ¤¾î¾²±â
+		$.ajax({
+			url: root + "/memo",
+			type: "post",
+			data: {"act" : "write", "seq" : "<%=freeboardDto.getSeq()%>", "mcontent" : content},
+			dataType: "xml",
+			success: memolist,
+			error: function (xhr, status, msg) {
+				alert("»óÅÂ: " + status + " ¸Þ¼¼Áö: " + msg);
+			}
+		});
+	});
+});
+
+
+
+
+
+	
+<%-- 	//±Û º¸±â µé¾î¿ÔÀ» ¶§ ¹Ù·Î 
+	$.ajax({
+		url: root + "/memo",
+		type: "post",
+		data: {"act" : "list", "seq" : "<%=freeboardDto.getSeq()%>"},
+		dataType: "xml",
+		success: memolist,
+	}); --%>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<!ELEMENT article (info+)>
+	<!ELEMENT info (subject, content, seq)>
+		<!ELEMENT subject (#PCDATA)> <!-- 문자열 PCDATA-->
+		<!ELEMENT content (#PCDATA)>
+		<!ELEMENT seq (#PCDATA)>

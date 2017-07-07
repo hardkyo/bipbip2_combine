@@ -1,0 +1,127 @@
+boardmvc
+  - src
+    - com.kitri.action
+      Action.java (I) - String execute(request, response); - 0 
+      
+    - com.kitri.common.service - 0
+      CommonService.java (I)
+      CommonServiceImpl.java -> 댓글기능 추가, (외부 라이브러리 - disqus)
+      
+    - com.kitri.common.dao -0
+      CommonDao.java (I)
+      CommonDaoImpl.java
+      
+    - com.kitri.factory -0
+      FreeBoardActionFactory.java
+      MapActionFactory.java
+      AlbumActionFactory.java
+      MamberActionFactory.java
+      
+    - com.kitri.util -0
+      Encoding.java
+      BoardConstance.java
+      PageNavigation.java
+    
+    - com.kitri.util.db -0
+      DBConnection.java
+      DBClose.java
+    
+    - com.kitri.memver.controller -0
+      MemberController.java (s : /member)
+    
+    - com.kitri.member.action -0
+      MemberInsertAction.java
+  
+    - com.kitri.member.model - 0
+      MemberDto.java
+    
+    - com.kitri.member.service - 0
+      MemberService.java (I)
+      MemberServiceImpl.java
+    
+    - com.kitri.member.dao - 0
+      MemberDao.java (I)
+      MemberDaoImpl.java
+    
+    - com.kitri.freeboard.controller - 0
+      FreeBoardController.java (s : /freeboard)
+    
+    - com.kitri.freeboard.model - 0
+      FreeBoardDto.java
+    
+    - com.kitri.freeboard.service -0
+      FreeBoardService.java (I)
+      FreeBoardServiceImpl.java
+     
+    - com.kitri.freeboard.action -0
+      FreeBoardWriteAction.java
+      FreeBoardListAction.java
+      FreeBoardViewAction.java
+      FreeBoardReplyAction.java
+      FreeBoardModifyAction.java 
+      
+    - com.kitri.freeboard.dao
+  	  FreeBoardDao.java (I)
+  	  FreeBoardDaoImpl.java
+       
+    - com.kitri.map.controller -0
+      Map.java (s: /map)
+      
+    - com.kitri.map.model -0
+      MapDto.java
+      
+    - com.kitri.map.service -0
+      MapService.java (I)
+      MapServiceImpl.java
+      
+    - com.kitri.map.action
+      
+    - com.kitri.map.dao -0
+      MapDao.java (I)
+      MapDaoImpl.java
+      
+    - com.kitri.gallery.controller
+      GalleryController.java (s : /gallery)
+    
+    - com.kitri.gallery.model
+      GallerydDto.java
+    
+    - com.kitri.gallery.service
+      GalleryService.java (I)
+      GalleryServiceImpl.java
+     
+    - com.kitri.gallery.action
+      GalleryWriteAction.java
+      GalleryListAction.java
+      GalleryViewAction.java
+      GalleryModifyAction.java 
+      
+    - com.kitri.gallery.dao
+      GalleryDao.java (I)
+      GalleryDaoImpl.java
+        
+  - webContent
+    index.jsp
+    css - *.css
+    js - *.js
+    img - *.jpg, *.gif, *.png
+    doc
+    
+    //////////// jsp - view ////////////
+    
+    map		        경로검색 
+    - mapplan.jsp
+    - mapedit.jsp
+    - mapview.jsp
+    - maplist.jsp
+    
+    common		공통파일
+    album		앨범(사진)게시판
+    board		공지사항, 한줄메모게시판, 일반게시판
+    
+    META-INF	context.xml (connection pooling configuration)
+    WEB-INF		web.xml (web editor configuration)
+    
+    
+    
+    

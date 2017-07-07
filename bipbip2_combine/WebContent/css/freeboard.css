@@ -1,0 +1,379 @@
+header {
+    text-align: center;
+}
+
+div.container {
+    width: 100%;
+    height: 90%;
+    /*border: 1px solid gray;*/
+}
+
+
+button {
+  /*margin: .2%;*/
+}
+
+div {
+  /*margin: .5%;*/
+  /*border: 1px solid black;*/
+}
+
+nav,header,.content,section,article,aside,footer {
+  margin: 0;
+  /*border: 2px solid green;*/
+}
+
+header {
+  min-width: 660px;
+  margin-top: 20px;
+  margin-bottom: .3%;
+  border-bottom: 3px solid black;
+}
+
+.content {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  height: auto;
+  padding: .1%;
+  vertical-align: middle;
+}
+
+
+article {
+  height: 85%;
+  margin: 1%
+  padding: 1em;
+  overflow: hidden;
+}
+
+footer {
+  min-width: 470px;
+}
+
+/*title bar*/
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul a {
+    text-decoration: none;
+}
+
+nav ul a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: green;
+  font-size: 20px;
+}
+
+.subject {
+  padding-left: 3px;
+  /*border: 1px solid black;*/
+}
+
+.centercolumn {
+  text-align: center;
+}
+
+/*board searchblock*/
+div.inner {
+  margin: .2%;
+  display: inline-block;
+  vertical-align: middle;
+
+  /*border: 1px solid black;*/
+}
+
+div.search-container {
+  margin: 2px;
+  text-align:center;
+}
+
+div.search-wrapper {
+  margin: 2px;
+  padding: 2px;
+}
+
+div.writebtn-containter {
+  text-align:right;
+  margin: .2%;
+}
+
+div.writebtn-wrapper {
+  margin: .2%;
+  padding: .1%;
+}
+
+/*hot list*/
+.hotlist {
+  width:100%;
+  text-align:center;
+  font-size: 15px;
+}
+*/
+
+.ads {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+  padding: 2%;
+}
+
+/*summer note*/
+#summernote {
+}
+
+
+
+
+
+
+/*hotlist*/
+.title {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.newslatestWrap {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.newslatestWrap .w-header {
+    display: table;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.newslatestWrap ul li {
+    padding: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    list-style: none;
+    line-height: 17px;
+    vertical-align: middle;
+}
+
+.clear {
+    clear: both;
+}
+
+.newslatestWrap .n_contentWrap .regdate .bar {
+    margin: 0 10px;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.newslatestWrap .n_contentWrap .regdate {
+    color: #888;
+    font-size: 11px;
+}
+
+.newslatestWrap .w-title {
+    display: table-cell;
+    float: left;
+    line-height: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 0 12px 0 0;
+    white-space: nowrap;
+}
+
+.newslatestWrap .w-barWrap {
+    display: table-cell;
+    height: 6px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.newslatestWrap .w-bar {
+    background: rgb(240, 240, 240) none repeat scroll 0 0;
+    height: 3px;
+    margin-top: -1px;
+    box-sizing: content-box;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+
+
+/* 내 글 목록 */
+body, button, input, select, table, textarea {
+    font-family: "Apple SD Gothic Neo","굴림",Gulim,Tahoma,Geneva,sans-serif;
+    font-size: 12px;
+}
+
+.mydocWrap {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.mydocWrap .w-header {
+    display: table;
+    margin: 0 0 10px;
+    overflow: hidden;
+}
+
+.mydocWrap .w-barWrap {
+    display: table-cell;
+    height: 6px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.mydocWrap .w-title {
+    display: table-cell;
+    float: left;
+    line-height: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 0 12px 0 0;
+    white-space: nowrap;
+}
+
+.mydocWrap .w-bar {
+    background: rgb(240, 240, 240) none repeat scroll 0 0;
+    height: 3px;
+    margin-top: -1px;
+    box-sizing: content-box;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+
+/* comment memo */
+
+.feedback {
+    position: relative;
+    border: 1px solid #ddd;
+    color: #4b4b4b;
+    margin: 0 0 20px 0;
+}
+
+#comment .fbHeader {
+    background-position: 11px -112px;
+}
+
+.feedback .fbHeader {
+    position: relative;
+    height: 30px;
+    padding: 0 0 0 35px;
+    line-height: 30px;
+    background: #f5f5f5 url(../images/icoSet.gif) no-repeat;
+    margin: 3px;
+}
+
+.feedback .fbHeader .btn {
+    float: right;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.refreshArea {
+    padding: 4px;
+}
+.refreshArea::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.write_comment::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.write_comment {
+    position: relative;
+    margin: 10px 12px;
+    zoom: 1;
+}
+
+.feedback .fbList {
+    margin: 0 7px;
+    padding: 0;
+    list-style: none;
+}
+.feedback .fbItem {
+    padding: 18px 0 16px 0;
+    border-bottom: 1px dashed #e6e6e6;
+    zoom: 1;
+}
+.feedback .fbItem::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.feedback .fbMeta {
+    float: left;
+    width: 154px;
+    padding: 0 0 0 6px;
+}
+.feedback .fbMeta .author {
+    margin: 0;
+    font-size: 12px;
+}
+.feedback .action a {
+    padding: 0 0 0 18px;
+    color: #767676;
+    text-decoration: none;
+    background: url(../images/icoSet.gif) no-repeat;
+}
+
+.feedback .action a.reply {
+    background-position: 0 -210px;
+}
+.feedback .action a.voteup {
+    background: url(../images/btn_re_agree.jpg) no-repeat;
+}
+.feedback .action a.votedown {
+    background: url(../images/btn_re_disagree.jpg) no-repeat;
+}
+.feedback .action a.declare {
+    background: url(../images/btn_re_report.png) no-repeat;
+}
+.refreshArea span {
+    float: right;
+}
+.write_comment .write_author {
+    padding: 0 0 10px 0;
+}
+.feedback .action a.reply {
+    background-position: 0 -210px;
+}
+.feedback .action a {
+    padding: 0 0 0 18px;
+    color: #767676;
+    text-decoration: none;
+    background: url(../images/icoSet.gif) no-repeat;
+}
+
