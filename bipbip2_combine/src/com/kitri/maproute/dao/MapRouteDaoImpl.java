@@ -36,12 +36,21 @@ public class MapRouteDaoImpl implements MapRouteDao {
 		try {
 			conn = DBConnection.getConnection();
 			StringBuffer sql = new StringBuffer();
+
+//			sql.append("\n");
+//			sql.append("select\n");
+//			sql.append("loc1,loc2, m.seq, m.memo,b.logtime, \n");
+//			sql.append("id, name, hit, m.loc1x x1, m.loc1y, m.loc2x x2, m.loc2y \n");
+//			sql.append("from map m, board b\n"); // 조인할 테이블 가져올 것
+//			sql.append("where m.seq=b.seq\n");
+//			
 			sql.append("\n");
-			sql.append("select\n");
-			sql.append("loc1,loc2, m.seq, m.memo,b.logtime, \n");
-			sql.append("id, name, hit, m.loc1x x1, m.loc1y, m.loc2x x2, m.loc2y \n");
-			sql.append("from map m, board b\n"); // 조인할 테이블 가져올 것
-			sql.append("where m.seq=b.seq\n");
+			sql.append("select b.* \n");
+			sql.append("from (select rownum rn, a.*  \n");
+			sql.append("	from (select \n");
+			sql.append("	loc1,loc2, m.seq, m.memo,b.logtime,id, name, hit, m.loc1x, m.loc1y, m.loc2x, m.loc2y \n"); // 조인할 테이블 가져올 것
+			sql.append("	from map m, board b \n");
+			sql.append("	where m.seq=b.seq order by b.hit desc) a) b where b.rn<7 \n");
 			//sql.append("and map_seq = ?\n");
 			// 수정해야합니다.
 			
@@ -82,9 +91,9 @@ public class MapRouteDaoImpl implements MapRouteDao {
 				mapDto.setId(rs.getString("id"));
 				mapDto.setName(rs.getString("name"));
 				mapDto.setHit(rs.getInt("hit"));
-				mapDto.setLoc1X(rs.getDouble("x1"));
+				mapDto.setLoc1X(rs.getDouble("loc1x"));
 				mapDto.setLoc1Y(rs.getDouble("loc1y"));
-				mapDto.setLoc2X(rs.getDouble("x2"));
+				mapDto.setLoc2X(rs.getDouble("loc2x"));
 				mapDto.setLoc2Y(rs.getDouble("loc2y"));
 				
 				list.add(mapDto);
