@@ -18,12 +18,14 @@
 
 <script type="text/javascript">
 window.onload="javascript:getViewData();"
-<!--
-//-->
+
+function no_back(){
+	window.history.forward();
+}
 </script>
 
 <link rel="stylesheet" type="text/css" href="<%=root%>/css/mapCss.css" />
-<body>
+<body onload="no_back()" onpageshow="if(event.persisted)no_back();">
 
 <section id="map">
 <div id="map_div"></div>

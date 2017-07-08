@@ -12,6 +12,8 @@ import com.kitri.admin.model.PathDto;
 import com.kitri.map.model.MapDto;
 import com.kitri.map.service.MapServiceImpl;
 import com.kitri.member.model.MemberDto;
+import com.kitri.util.Encoding;
+import com.kitri.util.NumberCheck;
 import com.kitri.util.PageMove;
 
 public class MapViewAction implements Action {
@@ -41,17 +43,17 @@ public class MapViewAction implements Action {
 			mapDto.setLoc1Y(Double.parseDouble(request.getParameter("loc1Y")));
 			mapDto.setLoc2X(Double.parseDouble(request.getParameter("loc2X")));
 			mapDto.setLoc2Y(Double.parseDouble(request.getParameter("loc2Y")));
-			mapDto.setSec1X(Double.parseDouble(request.getParameter("sec1X")));
-			mapDto.setSec1Y(Double.parseDouble(request.getParameter("sec2Y")));
-			mapDto.setSec2X(Double.parseDouble(request.getParameter("sec2X")));
-			mapDto.setSec2Y(Double.parseDouble(request.getParameter("sec2Y")));
-			mapDto.setSec3X(Double.parseDouble(request.getParameter("sec3X")));
-			mapDto.setSec3Y(Double.parseDouble(request.getParameter("sec3Y")));
+			mapDto.setSec1X(NumberCheck.nullToZeroZero(request.getParameter("sec1X")));
+			mapDto.setSec1Y(NumberCheck.nullToZeroZero(request.getParameter("sec2Y")));
+			mapDto.setSec2X(NumberCheck.nullToZeroZero(request.getParameter("sec2X")));
+			mapDto.setSec2Y(NumberCheck.nullToZeroZero(request.getParameter("sec2Y")));
+			mapDto.setSec3X(NumberCheck.nullToZeroZero(request.getParameter("sec3X")));
+			mapDto.setSec3Y(NumberCheck.nullToZeroZero(request.getParameter("sec3Y")));
 			mapDto.setLoc1(request.getParameter("loc1"));
 			mapDto.setLoc2(request.getParameter("loc2"));
-			mapDto.setSec1(request.getParameter("sec1"));
-			mapDto.setSec2(request.getParameter("sec2"));
-			mapDto.setSec3(request.getParameter("sec3"));
+			mapDto.setSec1(Encoding.nullToBlank(request.getParameter("sec1")));
+			mapDto.setSec2(Encoding.nullToBlank(request.getParameter("sec2")));
+			mapDto.setSec3(Encoding.nullToBlank(request.getParameter("sec3")));
 			mapDto.setMemo(request.getParameter("memo"));
 
 			request.setAttribute("mapDto", mapDto);
