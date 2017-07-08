@@ -105,27 +105,27 @@ function initialize() {
     
     	<div class="sm lil">
     	<div class="na_01 na">출발</div>
-        <div class="na_02 na"><input type="text" class="text" value="<%=mapDto.getLoc1()%>"></div>
+        <div class="na_02 na"><input type="text" class="text" value="<%=mapDto.getLoc1()%>" readonly="readonly"></div>
     	</div>
         
         <div class="sm">
     	<div class="na_01 na">도착</div>
-        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getLoc2()%>"></div>
+        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getLoc2()%>" readonly="readonly"></div>
     	</div>
         
         <div class="sm">
     	<div class="na_01 na sz">경유1</div>
-        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec1()%>"></div>
+        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec1()%>" readonly="readonly"></div>
     	</div>
         
         <div class="sm">
     	<div class="na_01 na sz">경유2</div>
-        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec2()%>"></div>
+        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec2()%>" readonly="readonly"></div>
     	</div>
         
         <div class="sm">
     	<div class="na_01 na sz">경유3</div>
-        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec3()%>"></div>
+        <div class="na_02 na"> <input type="text" class="text" value="<%=mapDto.getSec3()%>" readonly="readonly"></div>
     	</div>
         
         

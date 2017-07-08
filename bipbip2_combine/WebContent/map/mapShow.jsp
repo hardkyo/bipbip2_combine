@@ -14,7 +14,6 @@
 
 	var addr = null; // 필요한 주소값 만을 온전히 받을 수 있도록 함수를 조정해야한다.
 
-	var flag = false; //카테고리 검색 시 기존 인포윈도와의 충돌 방지
 	var tag = ""; // 카테고리 값
 	var keyword = null;
 
@@ -168,7 +167,7 @@
 					<div class="na_02 na">
 						<input type="text" class="text" id="get1">
 					</div>
-					<div class="na_03 na" onclick='input_Text1()'><input type="button" class="na_03 na" value="입력"></div>
+					<div class="na_03 na" onclick='input_Text1()'><input type="button" class="na_03 na" value="입력" readonly="readonly"></div>
 				</div>
 				
 				<div class="li">
@@ -176,7 +175,7 @@
 					<div class="na_02 na">
 						<input type="text" class="text" id="get3">
 					</div>
-					<div class="na_03 na" onclick='input_Text3()'><input type="button" class="na_03 na" value="입력"></div>
+					<div class="na_03 na" onclick='input_Text3()'><input type="button" class="na_03 na" value="입력" readonly="readonly"></div>
 				</div>
 
 				<div class="li">
@@ -184,7 +183,7 @@
 					<div class="na_02 na">
 						<input type="text" class="text" id="get4">
 					</div>
-					<div class="na_03 na" onclick='input_Text4()'><input type="button" class="na_03 na" value="입력"></div>
+					<div class="na_03 na" onclick='input_Text4()'><input type="button" class="na_03 na" value="입력" readonly="readonly"></div>
 				</div>
 
 				<div class="li">
@@ -192,7 +191,7 @@
 					<div class="na_02 na">
 						<input type="text" class="text" id="get5">
 					</div>
-					<div class="na_03 na" onclick='input_Text5()'><input type="button" class="na_03 na" value="입력"></div>
+					<div class="na_03 na" onclick='input_Text5()'><input type="button" class="na_03 na" value="입력" readonly="readonly"></div>
 				</div>
 				
 				<div class="li">
@@ -200,7 +199,7 @@
 					<div class="na_02 na">
 						<input type="text" class="text" id="get2">
 					</div>
-					<div class="na_03 na" onclick='input_Text2()'><input type="button" class="na_03 na" value="입력"></div>
+					<div class="na_03 na" onclick='input_Text2()'><input type="button" class="na_03 na" value="입력" readonly="readonly"></div>
 				</div>
 				
 			</div>
@@ -210,7 +209,7 @@
 			<div class="textarea">
 
 				<div class="memo_top">&nbsp;&nbsp;메모</div><font color="#adadad" font-style="italic" font-size="5pt">
-				<textarea class="memo" id="memo" onclick="this.value=''">여행에 관한 정보를 자유로이 메모하세요!</textarea></font>
+				<textarea class="memo" id="memo" onclick="memoClear()">여행에 관한 정보를 자유로이 메모하세요!</textarea></font>
 
 				<div class="button">
 					<div class="ok" onclick="moveLoc()">등록</div>
