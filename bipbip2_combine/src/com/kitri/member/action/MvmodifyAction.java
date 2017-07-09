@@ -17,8 +17,8 @@ public class MvmodifyAction implements Action {
 			throws ServletException, IOException {
 
 		String path = "/index.jsp";
-//		System.out.println("여기나오나?");
 		MemberDto memberDto = (MemberDto) request.getSession().getAttribute("loginInfo");
+		
 		if (memberDto != null) {
 			String id = memberDto.getId();
 			MemberDto memberDto2 = MemberServiceImpl.getMemberService().getMember(id);

@@ -25,38 +25,12 @@ public class MemberController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String root = request.getContextPath();
+//		<basic path>
+		String root = request.getContextPath(); 
 		String act = request.getParameter("act");
 		String path = "/index.jsp";
 
-		// System.out.println("제발찍혀라");
-		// System.out.println(request.getParameter("id"));
-		// System.out.println(request.getParameter("name"));
-		// System.out.println(request.getParameter("pass"));
-		// System.out.println(request.getParameter("email"));
-		// System.out.println(request.getParameter("phone"));
-		// System.out.println(request.getParameter("address"));
-
-		// int bcode = NumberCheck.nullToZero(request.getParameter("bcode"));
-		// int pg = NumberCheck.nullToOne(request.getParameter("pg"));
-		// String key = Encoding.nullToBlank(request.getParameter("key"));
-		// String word = request.getParameter("word");
-
-/*
-		int bcode = NumberCheck.nullToZero(request.getParameter("bcode"));
-		int pg = NumberCheck.nullToOne(request.getParameter("pg"));
-		String key = Encoding.nullToBlank(request.getParameter("key"));
-		String word = request.getParameter("word");
-
-		if (request.getMethod().equals("GET"))
-			word = Encoding.isoToEuc(word);
-
-		word = Encoding.urlFormat(word);
-		String queryStr = "?bcode=" + bcode + "&pg=" + pg + "&key=" + key + "&word=" + word;*/
 		
-		
-//		
-//		PrintWriter script = response.getWriter();
 		PathDto pathDto = new PathDto();
 		pathDto.setContentPath("/main/main.jsp");
 		if (act != null || !act.isEmpty()) {
@@ -64,7 +38,10 @@ public class MemberController extends HttpServlet {
 		} else {
 			pathDto.setPath("/index.jsp");
 		}
-
+//////////////////////////전체 총괄해서 합쳐주는 기본경로/////////////////////////////////
+		
+		
+//		<login active logic>
 		if ("mvlogin".equals(act)) {
 			pathDto.setContentPath("/member/login.jsp");
 			pathDto.setTitleHead("로그인");
@@ -72,6 +49,8 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("pathInfo", pathDto);
 			PageMove.forward(pathDto.getPath(), request, response);
 
+			////// 로그인 페이지로 이동 ///////
+			
 		} else if ("mvjoin".equals(act)) {
 			pathDto.setContentPath("/member/join.jsp");
 			pathDto.setTitleHead("회원가입");
@@ -79,49 +58,53 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("pathInfo", pathDto);
 			PageMove.forward(pathDto.getPath(), request, response);
 
+			////// 회원가입 페이지로 이동 //////
+			
 		} else if ("register".equals(act)) {
-//			System.out.println("나와라 제발 !!!");
 			path = MemberActionFactory.getRegisterAction().execute(request, response);
+			// 회원가입 로직 구현을 위한 팩토리 연결
+			
 			request.setAttribute("pathInfo", pathDto);
-			// PageMove.forward(pathDto.getPath(), request, response);
-			PageMove.forward(path, request, response);
+			PageMove.forward(path, request, response); // 로직에 관해 담겨있는 정보를 컨트롤러에서 각각의 jsp 파일로 전달
+			
+			//// 회원가입 로직 구현 //////
 			
 		} else if ("login".equals(act)) {
-//			System.out.println("나와라 제발 !!!");
 			path = MemberActionFactory.getLoginAction().execute(request, response);
-
+			// 로그인 로직구현을 위한 팩토리 연결
+			
 			request.setAttribute("pathInfo", pathDto);
-			PageMove.forward(path, request, response);
+			PageMove.forward(path, request, response); // 로직에 관해 담겨있는 정보를 컨트롤러에서 각각의 jsp 파일로 전달
+			
+			// 로그인 로직 구현 // 
 			
 		} else if ("logout".equals(act)) {
 			HttpSession session = request.getSession();
-			session.invalidate();
+			session.invalidate(); // session 값을 지워줌. 
 			
-			response.sendRedirect(root + path);
+			response.sendRedirect(root + path); // 로직에 관해 담겨있는 정보를 컨트롤러에서 각각의 jsp 파일로 전달
 			
 		} else if ("modify".equals(act)) {
 			path = MemberActionFactory.getModifyAction().execute(request, response);
+			
+			request.setAttribute("pathInfo", pathDto);
 			PageMove.forward(path, request, response);
-//			System.out.println("넘어가나??");
+
 
 		} else if ("mvmodify".equals(act)) {
-//			System.out.println("넘어오나??");
 			pathDto.setContentPath("/member/modify.jsp");
 			pathDto.setTitleHead("회원정보수정");
 			
-			path = MemberActionFactory.getMvmodifyAction().execute(request, response);
+			path = MemberActionFactory.getMvmodifyAction().execute(request, response); 
 			
 			request.setAttribute("pathInfo", pathDto);
-			PageMove.forward(pathDto.getPath(), request, response);
+			PageMove.forward(pathDto.getPath(), request, response); // 로직에 관해 담겨있는 정보를 컨트롤러에서 각각의 jsp 파일로 전달
 
 		} else if ("memberdelete".equals(act)) {
 			path = MemberActionFactory.getDeleteAction().execute(request, response);
 			PageMove.forward(path, request, response);
-			
-//			response.sendRedirect("logout");
-			
+
 		} else if ("idsearch".equals(act)) {
-//			System.out.println("찍히나??");
 			path = MemberActionFactory.getIdcheckAction().execute(request, response);
 			PageMove.forward(path, request, response);
 		
@@ -139,9 +122,8 @@ public class MemberController extends HttpServlet {
 			
 			request.setAttribute("pathInfo", pathDto);
 			PageMove.forward(pathDto.getPath(), request, response);
-		} else if ("".equals(act)) {
-
-		}
+			
+		} 
 
 	}
 

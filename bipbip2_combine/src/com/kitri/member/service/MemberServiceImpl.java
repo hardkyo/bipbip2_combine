@@ -69,7 +69,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int idCheck(String id) {
-		System.out.println(id);
+//		System.out.println(id);
 		return MemberDaoImpl.getMemberDao().idCheck(id);
 	}
 
