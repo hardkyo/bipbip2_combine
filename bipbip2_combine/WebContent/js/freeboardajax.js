@@ -86,6 +86,7 @@ function viewModifyArticleData(data) {
 // hotlist ajax
 function hotlist(xhr) {
 	$('#hotlist').empty();
+
 	var seq;
 	var subject;
 	var reply;
@@ -124,7 +125,6 @@ function hotlist(xhr) {
 						regdateDiv.append(spanHit);
 						regdateDiv.append(spanBar2);
 						regdateDiv.append(spanReply);
-
 			listLi.append(clearDiv);
 			listLi.appendTo('#hotlist');
 			
@@ -142,15 +142,17 @@ $(document).ready(function () {
 	});
 });
 
-function refreshMemo () {
-	$.ajax({
-		url: root + "/hotlist",
-		type: "post",
-		data: {"act" : "listhot"},
-		dataType: "xml",
-		success: hotlist
+$(document).ready(function() {
+	$('#refresh-memo').click(function(){
+		$.ajax({
+			url: root + "/hotlist",
+			type: "post",
+			data: {"act" : "listhot"},
+			dataType: "xml",
+			success: hotlist
+		});
 	});
-}
+});
 
 
 ///////////////

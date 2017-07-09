@@ -40,7 +40,6 @@ public class CommonDaoImpl implements CommonDao {
 		rs = pstmt.executeQuery();
 		rs.next();
 		seq = rs.getInt(1);
-		System.out.println(seq);
 		
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -208,13 +207,6 @@ public class CommonDaoImpl implements CommonDao {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-
 	@Override
 	public void updateHit(int seq, MemberDto loginInfo) {
 
