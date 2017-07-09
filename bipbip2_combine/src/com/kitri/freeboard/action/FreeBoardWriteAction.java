@@ -19,7 +19,6 @@ public class FreeBoardWriteAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int count = 0;
-		String root = request.getContextPath();
 		String path = "/board/freeboard.jsp";
 		
 		HttpSession session = request.getSession();

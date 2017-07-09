@@ -14,8 +14,6 @@ String word = request.getParameter("word");
 
 FreeBoardDto freeboardDto = (FreeBoardDto)request.getAttribute("article");
 MemberDto memberDto = (MemberDto) session.getAttribute("loginInfo");
-
-if (memberDto != null) {
 %>
 <input type="hidden" id="memoseq" value="<%=freeboardDto.getSeq()%>"/>  
 <input type="hidden" id="memoid" value="<%=freeboardDto.getId()%>"/>  
@@ -132,9 +130,11 @@ if (memberDto != null) {
 					
 <!-- modify -->
 					<div class="">
+						<div class="col-md-12">					
 <%
+		if(memberDto != null) {
 			if(memberDto.getId().equals(freeboardDto.getId())){
-%>						<div class="col-md-12">
+%>						
 							<div class="col-md-6" style="padding-left: 6%;">
 								<button onclick="javascript:mvmodifyArticle('<%=freeboardDto.getSeq()%>');" id="view-modifybtn"
 									type="button" class="btn btn-info find"><span class="glyphicon glyphicon-share-alt"></span> 수정
@@ -148,10 +148,20 @@ if (memberDto != null) {
 										type="button" class="btn btn-info find" ><span class="glyphicon glyphicon-pencil"></span> 답글
 								</button>							
 							</div>							
-						</div>
 <%
 			}
-%>					
+			if(!memberDto.getId().equals(freeboardDto.getId())){
+%>							
+							<div class="col-md-12" style="text-align: right; margin-bottom:2%; padding-right: 3%;">
+								<button onclick="javascript:mvreplyArticle('<%=freeboardDto.getSeq()%>');" id="view-replybtn" 
+										type="button" class="btn btn-info find" ><span class="glyphicon glyphicon-pencil"></span> 답글
+								</button>							
+							</div>							
+<%
+			}
+		}
+%>
+						</div>				
 
 <!-- back to list button-->
 						<div class="writebtn-containter" style="margin-bottom: 2%">
@@ -177,12 +187,12 @@ if (memberDto != null) {
 							</div>
 							<div class="refreshArea">
 								<span class="btn">
-									<button onclick="javascript:refreshMemo();" id="refresh-memo" class="btn btn-default">
+									<button id="refresh-memo" class="btn btn-default">
 									<span class="glyphicon glyphicon-refresh"></span> 댓글 새로고침
 									</button>
 								</span>
 							</div>
-							<form class="write_comment" id="write_comment" onsubmit="return procFilter(this, insert_comment)" action="./" method="post" editor_sequence="8">
+							<form class="write_comment" id="write_comment" onsubmit="return procFilter(this, insert_comment)" action="./" method="post">
 								<input name="error_return_url" type="hidden" value="/free/190678448">
 								<input name="act" type="hidden" value="">
 								<input name="vid" type="hidden" value="">
@@ -332,9 +342,3 @@ if (memberDto != null) {
 					</div>
 				</div>
 			</div>
-<%} else {%>
-<script>
-alert("부적절한 URL 접근입니다.");
-document.location.href = root + "/index.jsp";
-</script>
-<%}%>

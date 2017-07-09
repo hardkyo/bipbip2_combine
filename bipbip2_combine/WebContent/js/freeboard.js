@@ -173,7 +173,8 @@ function plusUp(seq) {
 		data: {"act" : "up", "seq" : seq},
 		dataType: "text",
 		success: updateUp
-	});}
+	});
+}
 function updateUp(text) {
 	$('#view-up').empty();
 	$('#view-up').text(text);

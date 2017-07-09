@@ -11,8 +11,6 @@ xml을 이용하면 편하다.
 -->
 <%
 FreeBoardDto dto = (FreeBoardDto) request.getAttribute("article");
-System.out.println("bookdata.jsp === " + dto.getSubject());
-System.out.println("bookdata.jsp === " + dto.getContent());
 %>
 <article>
 	<info>

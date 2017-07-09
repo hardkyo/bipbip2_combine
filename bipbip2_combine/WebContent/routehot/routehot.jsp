@@ -71,8 +71,8 @@ if(size!=0){
                   </div>
                   
                </div>
-                           </div>
-               </div>
+			</div>
+		</div>
            
  <%
    }

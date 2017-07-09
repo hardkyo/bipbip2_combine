@@ -22,10 +22,10 @@ public class DBConnection {
 		Connection conn = null;
 		try {
 
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "kitri", "kitri");
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "kitri", "kitri");
 
 //			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.18.31:1521:orcl", "kitri", "kitri");
-//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bipbip", "bipbip");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "bipbip", "bipbip");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
