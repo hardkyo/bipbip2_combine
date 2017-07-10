@@ -13,7 +13,7 @@ public class PageMove {
 		response.sendRedirect(request.getContextPath()+url);
 	}
 	public static void forward(String path, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		RequestDispatcher dispatcher=request.getRequestDispatcher(path);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
 }

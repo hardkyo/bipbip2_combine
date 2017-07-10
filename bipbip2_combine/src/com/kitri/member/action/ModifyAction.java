@@ -16,8 +16,7 @@ public class ModifyAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		HttpSession session = request.getSession();//session 생성
-//		MemberDto memberDto = (MemberDto) session.getAttribute("loginInfo");//session에서 MemberDto get
+
 		
 		MemberDto memberDto = (MemberDto) request.getSession().getAttribute("loginInfo");
 		String path = "/index.jsp";
@@ -26,12 +25,10 @@ public class ModifyAction implements Action {
 			memberDto2.setId(memberDto.getId());
 			memberDto2.setPass(request.getParameter("pass"));
 			memberDto2.setEmail(request.getParameter("email"));
-//			System.out.println(request.getParameter("email"));
 			memberDto2.setAddr1(request.getParameter("address1"));
-//			System.out.println(request.getParameter("address1"));
 			memberDto2.setAddr2(request.getParameter("address2"));
-//			System.out.println(request.getParameter("address2"));
 			memberDto2.setPhone(request.getParameter("phone"));
+			
 			
 			int cnt = MemberServiceImpl.getMemberService().modify(memberDto2);
 			if (cnt != 0) {

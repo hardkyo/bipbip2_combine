@@ -38,34 +38,41 @@ function moveModify(seq) {
 
 </script>
 
-<%
-if(memberDto.getId().equals(galleryDto.getId())) {
-%>			
-	
-
-<!--freeboard content-->
-			<div class="content">
-					<article class="">
+		
+				
+<div class="content">
+				<article class="">
+					
 						<div class="board">
-						
-						<div class="container-fluid" style="margin-top: 1%; margin-bottom: 2%;">
+							<div class="container-fluid" style="margin-top: 1%; margin-bottom: 2%;">
 								<div class="row" style="text-align: center;">
 									<div class="hotchoice col-md-3" >
 										<div class="">
+										
 											<button class="btn btn-default" type="button" >
 											<a href="javascript:listArticle('<%=pg%>');">List</a></button> 
+<%
+if(memberDto.getId().equals(galleryDto.getId())) {
+System.out.println(memberDto.getId() + " 434343  >>>>>>>>>>>>>>>>  "  + galleryDto.getId());
+%>												
+											
 											
 											<button class="btn btn-default" type="button" >
-											<a href="javascript:moveModify('<%=galleryDto.getSeq() %>');">Modify</a></button> 
+											<a href="javascript:moveModify('<%=galleryDto.getSeq() %>');">Modify</a></button> 																	
 											
 											<button class="btn btn-default" type="button">
 											<a href="javascript:deleteArticle('<%=galleryDto.getSeq() %>');">
 											Delete</a></button>
 										
+<%
+	}
+%>										
+										
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
 										
 							<div class="boardlist">
 								<form name="viewform" method="post" style="margin: 0px">
@@ -96,14 +103,12 @@ if(memberDto.getId().equals(galleryDto.getId())) {
 									</table>
 								</form>
 							</div>
-						</div>
-					</article>
+						</article>
+					</div>
 
-				</div>
 
-<%
-	}
-%>		
+
+		
 					
 	<%
 }

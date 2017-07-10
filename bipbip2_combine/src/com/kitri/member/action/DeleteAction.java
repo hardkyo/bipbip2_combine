@@ -18,10 +18,10 @@ public class DeleteAction implements Action {
 			throws ServletException, IOException {
 		
 		String path = "/index.jsp";
-//		String root = ""
 		
 		MemberDto memberDto = (MemberDto) request.getSession().getAttribute("loginInfo");
 		String id = memberDto.getId();
+		
 		int cnt = MemberServiceImpl.getMemberService().delete(id);
 		if (cnt != 0) {
 			path =  "/index.jsp";

@@ -23,7 +23,7 @@ public class LoginAction implements Action {
 		String pass = request.getParameter("pass");
 		
 		MemberDto memberDto = MemberServiceImpl.getMemberService().login(id, pass);
-//		System.out.println(id +   ">>>>"  + pass);
+
 
 		if (memberDto != null) {
 			//////////////////// session ///////////////////////

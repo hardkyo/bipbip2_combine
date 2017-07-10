@@ -88,7 +88,7 @@ if(size != 0) {
 			<a href="javascript:viewArticle('<%=galleryDto.getSeq() %>');">
 			<b><%=galleryDto.getSeq() %>. <%=galleryDto.getSubject() %></b></a></td></p>
 			<td nowrap class="board_bar"></td>
-			<td class="centercolumn" width="11%">글쓴이 :<%=galleryDto.getName() %></td>
+			<td class="centercolumn" width="11%">글쓴이 :<%=galleryDto.getId() %></td>
 			<td nowrap class="board_bar"></td>
 			<td class="centercolumn" width="10%">날짜 :<%=galleryDto.getLogtime() %></td>
 			<td nowrap class="board_bar"></td>

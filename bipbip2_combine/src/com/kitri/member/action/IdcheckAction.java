@@ -17,12 +17,10 @@ public class IdcheckAction implements Action {
 		
 		String path = "/index.jsp";
 		String sid = request.getParameter("id");
-//		System.out.println(request.getParameter("id"));
-//		System.out.println(request.getParameter("signid"));
+		
 		int count = MemberServiceImpl.getMemberService().idCheck(sid);
 		
 		path = "/member/idcheckresult.jsp?sid=" + sid + "&count=" + count;
-//		System.out.println(sid + ">>>>>" + count);
 		return path;
 	}
 

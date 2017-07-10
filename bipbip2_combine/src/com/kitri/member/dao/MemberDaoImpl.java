@@ -34,23 +34,11 @@ public class MemberDaoImpl implements MemberDao {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBConnection.getConnection();
-//			System.out.println(conn);
-//			System.out.println("Á¦¹ßÂïÇô¶ó");
-			
-//			System.out.println("Á¦¹ßÂïÇô¶ó");
-//			System.out.println(memberDto.getId());
-//			System.out.println(memberDto.getName());
-//			System.out.println(memberDto.getPass());
-//			System.out.println(memberDto.getPhone());
-//			System.out.println(memberDto.getAddress());
-//			System.out.println(memberDto.getEmail());
 			String sql = "";
 			sql += "insert into \n";
 			sql += "member(id, pass, name, email, phone, addr1, addr2) \n";
 			sql += "values (?, ?, ?, ?, ?, ?, ?) \n";
-//			System.out.println(sql);
 			pstmt = conn.prepareStatement(sql);
-//			System.out.println(pstmt);
 			int idx = 0;
 			pstmt.setString(++idx, memberDto.getId());
 			pstmt.setString(++idx, memberDto.getPass());
@@ -59,9 +47,7 @@ public class MemberDaoImpl implements MemberDao {
 			pstmt.setString(++idx, memberDto.getPhone());
 			pstmt.setString(++idx, memberDto.getAddr1());
 			pstmt.setString(++idx, memberDto.getAddr2());
-//			System.out.println(pstmt);
 			cnt = pstmt.executeUpdate();
-//			System.out.println(cnt);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -73,7 +59,6 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public MemberDto login(Map<String, String> map) {
-//		System.out.println("Á¦¹ßÂïÇô¶ó");
 		MemberDto memberDto = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -84,11 +69,9 @@ public class MemberDaoImpl implements MemberDao {
 			sb.append("select id, pass, name \n");
 			sb.append("from member \n");
 			sb.append("where id = ? and pass = ?");
-//			System.out.println(sb);
 			pstmt = conn.prepareStatement(sb.toString());
 			pstmt.setString(1, map.get("id"));
 			pstmt.setString(2, map.get("pass"));
-//			System.out.println(map.get("id")  +  ">>>>"  + map.get("pass"));
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				memberDto = new MemberDto();
@@ -104,15 +87,9 @@ public class MemberDaoImpl implements MemberDao {
 		return memberDto;
 	}
 
-	@Override
-	public MemberDto logout(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public int modify(MemberDto memberDto2) {
-//		System.out.println(memberDto2.getEmail());
 		int cnt = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;		
@@ -132,7 +109,6 @@ public class MemberDaoImpl implements MemberDao {
 			pstmt.setString(++idx, memberDto2.getId());
 			
 			cnt += pstmt.executeUpdate();
-//			System.out.println(cnt);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -187,7 +163,6 @@ public class MemberDaoImpl implements MemberDao {
 				memberDto2.setPhone(rs.getString("phone"));
 				memberDto2.setEmail(rs.getString("email"));
 			}
-//			System.out.println(memberDto2);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -214,7 +189,6 @@ public class MemberDaoImpl implements MemberDao {
 			rs = pstmt.executeQuery();
 			rs.next();
 			count = rs.getInt(1);
-//			System.out.println(count);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -224,7 +198,4 @@ public class MemberDaoImpl implements MemberDao {
 		return count;
 		
 	}
-
-	
-
 }

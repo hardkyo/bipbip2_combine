@@ -92,7 +92,7 @@ if (list != null) {
 													</a>
 												</td>
 												<td></td>												
-												<th class="centercolumn" style="word-break: break-all;"><%=dto.getName()%></th>	
+												<th class="centercolumn" style="word-break: break-all;"><%=dto.getId()%></th>	
 														<td></td>
 																															
 												<td align="center" class="centercolumn"><%=dto.getLogtime()%></td>

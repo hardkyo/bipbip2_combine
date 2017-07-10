@@ -12,6 +12,7 @@ import javax.servlet.http.*;
 
 import com.kitri.admin.model.PathDto;
 import com.kitri.common.service.CommonServiceImpl;
+import com.kitri.factory.GalleryActionFactory;
 import com.kitri.gallery.model.GalleryDto;
 import com.kitri.gallery.model.ReboardDto;
 import com.kitri.gallery.service.*;
@@ -103,7 +104,7 @@ public class PictureUploadController extends HttpServlet {
 				String key = Encoding.nullToBlank(multi.getParameter("key"));
 				String word = multi.getParameter("word");
 				path += "?bcode=" + bcode + "&pg=" + pg + "&key=" + key + "&word=" + word;
-
+				GalleryActionFactory.getGalleryListAction().execute(request, response);
 				PageMove.forward(pathDto.getPath(), request, response);
 
 			} else {
