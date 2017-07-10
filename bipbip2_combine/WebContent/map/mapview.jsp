@@ -86,6 +86,10 @@ var startX;
 var startY;
 var endX;
 var endY;
+
+var sec1 = '<%=mapDto.getSec1()%>';
+var sec2 = '<%=mapDto.getSec2()%>';
+var sec3 = '<%=mapDto.getSec3()%>';
  
 var map;
 function initialize() {
@@ -95,22 +99,25 @@ function initialize() {
    map.addLayer(markerLayer);
 
 
-   if(<%=mapDto.getSec1()%>==""){
+if(sec1==""){
 	   setCoordinace7();
 	   searchRoute();
-   } else if(<%=mapDto.getSec2()%>==""){
+   }  else if(sec2==""){
 	   setCoordinace1();
 	   searchRoute();
 	   setCoordinace5();
 	   searchRoute();
-   } else if(<%=mapDto.getSec3()%>==""){
+	   alert("done"+sec2+"doneAt2=2");
+   } else if(sec3==""){
 	   setCoordinace1();
 	   searchRoute();
 	   setCoordinace2();
 	   searchRoute();
 	   setCoordinace6();
 	   searchRoute();
-   } else if(<%=mapDto.getSec3()%>!=""){
+	   alert("done"+sec2+"doneAt3=3");
+   } else if(sec3!=""){
+	   alert("done::"+sec3+"::done");
 	   setCoordinace1();
 	   searchRoute();
 	   setCoordinace2();
@@ -119,7 +126,7 @@ function initialize() {
 	   searchRoute();
 	   setCoordinace4();
 	   searchRoute();
-   }
+   } 
 }
  window.onload = function() {
     initialize();
@@ -129,7 +136,7 @@ function initialize() {
    /*    var startX = 14132105.182794;
        var startY = 4519396.684182;  */
 
-       
+       alert("startX:::"+startX);
        //////////// 좌표계를 변환 중입니다.
          var str =(String)(get3857LonLat(startX,startY));
          var end =(String)(get3857LonLat(endX,endY));

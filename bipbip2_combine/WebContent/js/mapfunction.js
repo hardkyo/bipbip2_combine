@@ -65,7 +65,7 @@
 			document.draftForm.loc2Y.value = loc2Y;
 			document.draftForm.loc2.value = loc2;
 		} else {
-			alert("출발지가 지정되지 않았습니다.")
+			alert("must set departure location")
 		}
 		
 	}
@@ -78,8 +78,9 @@
 			document.draftForm.sec1X.value = sec1X;
 			document.draftForm.sec1Y.value = sec1Y;
 			document.draftForm.sec1.value = sec1;
+
 		} else {
-			alert("출발지가 지정되지 않았습니다.")
+			alert("must set departure location")
 		}
 	
 	}
@@ -91,9 +92,10 @@
 			sec2=addr;
 			document.draftForm.sec2X.value = sec2X;
 			document.draftForm.sec2Y.value = sec2Y;
-			document.draftForm.sec2.value = sec2;
+			document.draftForm.sec2.value = sec2;alert
+
 		} else {
-			alert("1번 경유지가 지정되지 않았습니다.")
+			alert("must set 1st stop")
 		}
 		
 	}
@@ -107,7 +109,7 @@
 			document.draftForm.sec3Y.value = sec3Y;
 			document.draftForm.sec3.value = sec3;
 		} else {
-			alert("2번 경유지가 지정되지 않았습니다.")
+			alert("must set 2nd stop")
 		}
 		
 	}
