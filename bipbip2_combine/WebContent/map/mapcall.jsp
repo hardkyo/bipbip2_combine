@@ -68,7 +68,7 @@ function setCoordinace3(){
     endY = <%=mapDto.getSec3Y()%>
     // 경유2 ~ 경유3
 }
-function setCoordinace4(){
+function setCoordinace4(){  
     startX=<%=mapDto.getSec3X()%>
     startY=<%=mapDto.getSec3Y()%>
     endX = <%=mapDto.getLoc2X()%>
