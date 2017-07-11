@@ -92,3 +92,6 @@ alter table map
     sec2 VARCHAR2(500),
     
     sec3 VARCHAR2(500))
+    
+    
+ select * from member

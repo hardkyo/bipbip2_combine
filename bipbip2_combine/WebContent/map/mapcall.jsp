@@ -47,14 +47,102 @@ String root = request.getContextPath();
 <div id="map_div"></div>
 <!-- <div class="map_place"></div> -->
 <script type="text/javascript">
- 
+function setCoordinace1(){
+    startX=<%=mapDto.getLoc1X()%>
+    startY=<%=mapDto.getLoc1Y()%>
+    endX = <%=mapDto.getSec1X()%>
+    endY = <%=mapDto.getSec1Y()%>
+    // 출발 ~ 경유1
+}
+function setCoordinace2(){
+    startX=<%=mapDto.getSec1X()%>
+    startY=<%=mapDto.getSec1Y()%>
+    endX = <%=mapDto.getSec2X()%>
+    endY = <%=mapDto.getSec2Y()%>
+    // 경유1 ~ 경유2
+}
+function setCoordinace3(){
+    startX=<%=mapDto.getSec2X()%>
+      startY=<%=mapDto.getSec2Y()%>
+    endX = <%=mapDto.getSec3X()%>
+    endY = <%=mapDto.getSec3Y()%>
+    // 경유2 ~ 경유3
+}
+function setCoordinace4(){  
+    startX=<%=mapDto.getSec3X()%>
+    startY=<%=mapDto.getSec3Y()%>
+    endX = <%=mapDto.getLoc2X()%>
+    endY = <%=mapDto.getLoc2Y()%>
+    // 경유3 ~ 도착
+}
+function setCoordinace5(){
+    startX=<%=mapDto.getSec1X()%>
+    startY=<%=mapDto.getSec1Y()%>
+    endX = <%=mapDto.getLoc2X()%>
+    endY = <%=mapDto.getLoc2Y()%>
+    // 경유1 ~ 도착
+}
+function setCoordinace6(){
+    startX=<%=mapDto.getSec2X()%>
+    startY=<%=mapDto.getSec2Y()%>
+    endX = <%=mapDto.getLoc2X()%>
+    endY = <%=mapDto.getLoc2Y()%>
+    // 경유2 ~ 도착
+}
+function setCoordinace7(){
+    startX=<%=mapDto.getLoc1X()%>
+    startY=<%=mapDto.getLoc1Y()%>
+    endX = <%=mapDto.getLoc2X()%>
+    endY = <%=mapDto.getLoc2Y()%>
+    // 출발 ~ 도착
+}
+
+var startX;
+var startY;
+var endX;
+var endY;
+
+var sec1 = '<%=mapDto.getSec1()%>';
+var sec2 = '<%=mapDto.getSec2()%>';
+var sec3 = '<%=mapDto.getSec3()%>';
+
 var map;
 function initialize() {
    map = new Tmap.Map({div:"map_div", width:'600px', height:'400px'});
    map.addControl(new Tmap.Control.MousePosition());
    var markerLayer = new Tmap.Layer.Markers();
    map.addLayer(markerLayer);
-   searchRoute();
+   
+   if(sec1==""){
+	   setCoordinace7();
+	   searchRoute();
+   }  else if(sec2==""){
+	   setCoordinace1();
+	   searchRoute();
+	   setCoordinace5();
+	   searchRoute();
+	   alert("done"+sec2+"done");
+   } else if(sec3==""){ 
+	   setCoordinace1();
+	   searchRoute();
+	   setCoordinace2();
+	   searchRoute();
+	   setCoordinace6();
+	   searchRoute();
+  } else if(sec3!=""){
+	   alert("done::"+sec3+"::done");
+	   setCoordinace1();
+	   searchRoute();
+	   setCoordinace2();
+	   searchRoute();
+	   setCoordinace3();
+	   searchRoute();
+	   setCoordinace4();
+	   searchRoute();
+   }
+   
+   
+
 }
  window.onload = function() {
     initialize();
@@ -63,10 +151,8 @@ function initialize() {
        var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
    /*    var startX = 14132105.182794;
        var startY = 4519396.684182;  */
-       var startX=<%=mapDto.getLoc1X()%>
-       var startY=<%=mapDto.getLoc1Y()%>
-       var endX = <%=mapDto.getLoc2X()%>
-       var endY = <%=mapDto.getLoc2Y()%>
+       
+       alert("startX:::"+startX);
        
        //////////// 좌표계를 변환 중입니다.
          var str =(String)(get3857LonLat(startX,startY));

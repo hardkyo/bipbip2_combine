@@ -56,40 +56,62 @@
 		document.draftForm.loc1.value = loc1;
 	}
 	function input_Text2() {
-		document.getElementById("get2").value = addr;
-		loc2X=latlng.getLng();
-		loc2Y=latlng.getLat();
-		loc2 = addr;
-		document.draftForm.loc2X.value = loc2X;
-		document.draftForm.loc2Y.value = loc2Y;
-		document.draftForm.loc2.value = loc2;
+		if(loc1!=null){
+			document.getElementById("get2").value = addr;
+			loc2X=latlng.getLng();
+			loc2Y=latlng.getLat();
+			loc2 = addr;
+			document.draftForm.loc2X.value = loc2X;
+			document.draftForm.loc2Y.value = loc2Y;
+			document.draftForm.loc2.value = loc2;
+		} else {
+			alert("must set departure location")
+		}
+		
 	}
 	function input_Text3() {
-		document.getElementById("get3").value = addr;
-		sec1X=latlng.getLng();
-		sec1Y=latlng.getLat();
-		sec1=addr;
-		document.draftForm.sec1X.value = sec1X;
-		document.draftForm.sec1Y.value = sec1Y;
-		document.draftForm.sec1.value = sec1;
+		if(loc1!=null){
+			document.getElementById("get3").value = addr;
+			sec1X=latlng.getLng();
+			sec1Y=latlng.getLat();
+			sec1=addr;
+			document.draftForm.sec1X.value = sec1X;
+			document.draftForm.sec1Y.value = sec1Y;
+			document.draftForm.sec1.value = sec1;
+
+		} else {
+			alert("must set departure location")
+		}
+	
 	}
 	function input_Text4() {
-		document.getElementById("get4").value = addr;
-		sec2X=latlng.getLng();
-		sec2Y=latlng.getLat();
-		sec2=addr;
-		document.draftForm.sec2X.value = sec2X;
-		document.draftForm.sec2Y.value = sec2Y;
-		document.draftForm.sec2.value = sec2;
+		if(sec1!=null){
+			document.getElementById("get4").value = addr;
+			sec2X=latlng.getLng();
+			sec2Y=latlng.getLat();
+			sec2=addr;
+			document.draftForm.sec2X.value = sec2X;
+			document.draftForm.sec2Y.value = sec2Y;
+			document.draftForm.sec2.value = sec2;alert
+
+		} else {
+			alert("must set 1st stop")
+		}
+		
 	}
 	function input_Text5() {
-		document.getElementById("get5").value = addr;
-		sec3X=latlng.getLng();
-		sec3Y=latlng.getLat();
-		sec3=addr;
-		document.draftForm.sec3X.value = sec3X;
-		document.draftForm.sec3Y.value = sec3Y;
-		document.draftForm.sec3.value = sec3;
+		if(sec2!=null){
+			document.getElementById("get5").value = addr;
+			sec3X=latlng.getLng();
+			sec3Y=latlng.getLat();
+			sec3=addr;
+			document.draftForm.sec3X.value = sec3X;
+			document.draftForm.sec3Y.value = sec3Y;
+			document.draftForm.sec3.value = sec3;
+		} else {
+			alert("must set 2nd stop")
+		}
+		
 	}
 
 	
@@ -224,7 +246,7 @@
 
 	function memoClear(){
 		var flag = false
-		if(flag){
+		if(flag = false){
 			this.value=''
 			flag = true;
 		}

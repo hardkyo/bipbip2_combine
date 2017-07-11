@@ -35,4 +35,12 @@ public class NumberCheck {
 		return flag;
 	}
 	
+	public static double nullToZeroZero(String tmp){
+		double num = 0;
+		if (isNumber(tmp)) {			
+			num = Integer.parseInt(tmp);
+		}
+		return num;
+	}
+	
 }

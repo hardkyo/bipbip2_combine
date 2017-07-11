@@ -3,7 +3,9 @@
 <!-- services와 clusterer, drawing 라이브러리 불러오기 -->
 <script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=6d432994bce4d7c8c4c3ad20a20c496b&libraries=services,clusterer,drawing"></script>
-	<%@ include file="/common/public.jsp" %>
+	<%
+	String root = request.getContextPath();
+	%>
 <script type="text/javascript" src="<%=root%>/js/mapfunction.js"></script>
 <script type="text/javascript" src="<%=root%>/js/maplocationfunction.js"></script>
 

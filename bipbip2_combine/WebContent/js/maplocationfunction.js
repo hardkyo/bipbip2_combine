@@ -3,10 +3,13 @@
 
 ////// 컨트롤러로 변수값 보내기 + 경로 확정 화면으로 이동///////////////////////
 	function moveLoc() {
-		var memo = document.getElementById("memo").value;
-		document.draftForm.memo.value = memo;
-		document.draftForm.action = root + "/map";
-		document.draftForm.submit();
+		if(loc1!=null && loc2!=null){
+			var memo = document.getElementById("memo").value;
+			document.draftForm.memo.value = memo;
+			document.draftForm.action = root + "/map";
+			document.draftForm.submit();
+		}
+
 	}
 	// 경로 선택 화면으로 이동
 	function movecall(){
