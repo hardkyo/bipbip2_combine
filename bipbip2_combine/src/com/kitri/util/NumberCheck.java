@@ -24,6 +24,8 @@ public class NumberCheck {
 			int len = tmp.length();
 			for (int i = 0; i < len; i++) {
 				int c = tmp.charAt(i);
+				if((char)c == '.')
+					continue;
 				if (c < 48 || c > 57) {
 					flag = false;
 					break;
@@ -38,7 +40,7 @@ public class NumberCheck {
 	public static double nullToZeroZero(String tmp){
 		double num = 0;
 		if (isNumber(tmp)) {			
-			num = Integer.parseInt(tmp);
+			num = Double.parseDouble(tmp);
 		}
 		return num;
 	}
