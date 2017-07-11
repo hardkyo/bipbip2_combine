@@ -61,8 +61,8 @@ PageNavigation pageNavigation = (PageNavigation) request.getAttribute("navigator
             <div class="number">번호</div>
             <div class="where">출발지역</div>
             <div class="text">도착지역</div>
-            <div class="who">아이디</div>
-            <div class="when">닉네임</div>
+            <div class="who">태그</div>
+            <div class="when">아이디</div>
             <div class="view">추천수</div>
         
         	</div>
@@ -77,7 +77,7 @@ PageNavigation pageNavigation = (PageNavigation) request.getAttribute("navigator
             <div class="number"><%=mapDto.getSeq() %></div>
             <div class="where"><%=mapDto.getLoc1() %></div>
             <div class="text"><%=mapDto.getLoc2() %></div>
-            <div class="who"><%=mapDto.getName() %></div>
+            <div class="who">즐거운 여행</div>
             <div class="when"><%=mapDto.getId()%></div>
             <div class="view"><%=mapDto.getHit()%></div>
             </div></a>

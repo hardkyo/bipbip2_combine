@@ -169,7 +169,7 @@ var root = "<%=request.getContextPath()%>";
 							<li class="dropdown"><a class="dropdown-toggle" href="#"data-toggle="dropdown">모임 <strong class="caret"></strong></a>
 								<ul class="dropdown-menu">
 									<li><a href="javascript:movePlanList();">경로보기</a></li>
-									<li><a href="#">기능2</a></li>
+									<li><a href="#"></a></li>
 								</ul></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

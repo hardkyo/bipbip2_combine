@@ -45,7 +45,6 @@ public class MapViewAction implements Action {
 			mapDto.setLoc2Y(Double.parseDouble(request.getParameter("loc2Y")));
 			mapDto.setSec1X(NumberCheck.nullToZeroZero(request.getParameter("sec1X")));
 			mapDto.setSec1Y(NumberCheck.nullToZeroZero(request.getParameter("sec1Y")));
-			mapDto.setSec1Y(NumberCheck.nullToZeroZero(request.getParameter("sec2Y")));
 			mapDto.setSec2X(NumberCheck.nullToZeroZero(request.getParameter("sec2X")));
 			mapDto.setSec2Y(NumberCheck.nullToZeroZero(request.getParameter("sec2Y")));
 			mapDto.setSec3X(NumberCheck.nullToZeroZero(request.getParameter("sec3X")));
