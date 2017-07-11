@@ -211,7 +211,7 @@
 			<div class="textarea">
 
 				<div class="memo_top">&nbsp;&nbsp;메모</div><font color="#adadad" font-style="italic" font-size="5pt">
-				<textarea class="memo" id="memo" onclick="memoClear()">여행에 관한 정보를 자유로이 메모하세요!</textarea></font>
+				<textarea class="memo" id="memo" onclick="this.value=''">여행에 관한 정보를 자유로이 메모하세요!</textarea></font>
 
 				<div class="button">
 					<div class="ok" onclick="moveLoc()">등록</div>

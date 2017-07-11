@@ -137,6 +137,9 @@ if(sec1==""){
    /*    var startX = 14132105.182794;
        var startY = 4519396.684182;  */
        
+       alert("startX:::"+startX);
+       alert("endY:::"+endY);
+       
        //////////// 좌표계를 변환 중입니다.
          var str =(String)(get3857LonLat(startX,startY));
          var end =(String)(get3857LonLat(endX,endY));

@@ -53,6 +53,7 @@ public class MapController extends HttpServlet {
 
 		} else if ("mapview".equals(act)) {
 			//System.out.println("order recieved:::view");
+			
 			String contentpath = MapActionFactory.getMapViewAction().execute(request, response);
 			pathDto.setContentPath(contentpath);
 			pathDto.setTitleHead("경로 상세 화면");
