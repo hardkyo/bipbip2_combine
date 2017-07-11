@@ -3,7 +3,11 @@
     <%@page import="java.util.List"%>
     <%@page import="com.kitri.member.model.MemberDto"%>
 <%@page import="com.kitri.map.model.MapDto, com.kitri.util.*"%>
-	<%@ include file="/common/public.jsp" %>
+
+
+<%
+String root = request.getContextPath();
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -43,7 +47,7 @@ PageNavigation pageNavigation = (PageNavigation) request.getAttribute("navigator
             <form id="callForm" name="callForm" method="post" action=""
 			style="margin: 0px">
             <input type="hidden" name="act" value="">
-            <input type="hidden" name="bcode" value="<%=bcode%>">
+            <input type="hidden" name="bcode" value="2">
 			<input type="hidden" name="pg" value="1">
 			<input type="hidden" name="key" value="">
 			<input type="hidden" name="word" value="">

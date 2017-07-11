@@ -245,9 +245,6 @@
 	
 
 	function memoClear(){
-		var flag = false
-		if(flag = false){
 			this.value=''
-			flag = true;
-		}
+
 	}

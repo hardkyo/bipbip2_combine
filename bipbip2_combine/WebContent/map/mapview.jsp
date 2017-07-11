@@ -6,7 +6,11 @@
 <!-- services와 clusterer, drawing 라이브러리 불러오기 -->
 <script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=6d432994bce4d7c8c4c3ad20a20c496b&libraries=services,clusterer,drawing"></script>
-	<%@ include file="/common/public.jsp" %>
+
+<%
+String root = request.getContextPath();
+%>
+
 	<!-- T-map Api 키 -->
 	<script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=b049998c-19f6-379f-893e-bd72e90ed980"></script>
 	<script type="text/javascript" src="<%=root%>/js/maplocationfunction.js"></script>
@@ -107,7 +111,6 @@ if(sec1==""){
 	   searchRoute();
 	   setCoordinace5();
 	   searchRoute();
-	   alert("done"+sec2+"doneAt2=2");
    } else if(sec3==""){
 	   setCoordinace1();
 	   searchRoute();
@@ -115,9 +118,7 @@ if(sec1==""){
 	   searchRoute();
 	   setCoordinace6();
 	   searchRoute();
-	   alert("done"+sec2+"doneAt3=3");
    } else if(sec3!=""){
-	   alert("done::"+sec3+"::done");
 	   setCoordinace1();
 	   searchRoute();
 	   setCoordinace2();
@@ -135,7 +136,7 @@ if(sec1==""){
        var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
    /*    var startX = 14132105.182794;
        var startY = 4519396.684182;  */
-
+       
        //////////// 좌표계를 변환 중입니다.
          var str =(String)(get3857LonLat(startX,startY));
          var end =(String)(get3857LonLat(endX,endY));

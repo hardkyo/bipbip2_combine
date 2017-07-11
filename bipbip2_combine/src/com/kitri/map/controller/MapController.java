@@ -30,7 +30,7 @@ public class MapController extends HttpServlet {
 
 		word = Encoding.urlFormat(word);
 		String queryStr = "?bcode=" + bcode + "&pg=" + pg + "&key=" + key + "&word=" + word;
-		System.out.println("RC >>> " + queryStr);
+		//System.out.println("RC >>> " + queryStr);
 
 		PathDto pathDto = new PathDto();
 		pathDto.setContentPath("/main/main.jsp");
@@ -52,7 +52,7 @@ public class MapController extends HttpServlet {
 			String contentpath = MapActionFactory.getMapWriteAction().execute(request, response);
 
 		} else if ("mapview".equals(act)) {
-			System.out.println("order recieved:::view");
+			//System.out.println("order recieved:::view");
 			String contentpath = MapActionFactory.getMapViewAction().execute(request, response);
 			pathDto.setContentPath(contentpath);
 			pathDto.setTitleHead("경로 상세 화면");
@@ -60,7 +60,7 @@ public class MapController extends HttpServlet {
 			request.setAttribute("pathInfo", pathDto);
 			PageMove.forward(pathDto.getPath(), request, response);
 		} else if ("maplist".equals(act)) {
-			System.out.println("order recieved:::list");
+			//System.out.println("order recieved:::list");
 
 			String contentpath = MapActionFactory.getMapListAction().execute(request, response);
 			pathDto.setContentPath(contentpath);
@@ -70,7 +70,7 @@ public class MapController extends HttpServlet {
 			PageMove.forward(pathDto.getPath(), request, response);
 
 		} else if ("mapdelete".equals(act)) {
-			System.out.println("order recieved:::delete");
+			//System.out.println("order recieved:::delete");
 			String check = MapActionFactory.getMapDeleteAction().execute(request, response);
 			String contentpath = MapActionFactory.getMapListAction().execute(request, response);
 			pathDto.setContentPath(contentpath);
@@ -80,7 +80,7 @@ public class MapController extends HttpServlet {
 			PageMove.forward(pathDto.getPath(), request, response);
 			
 		} else if ("mapcall".equals(act)) {
-			System.out.println("order recieved:::call");
+			//System.out.println("order recieved:::call");
 			String contentpath = MapActionFactory.getMapCallAction().execute(request, response);
 			pathDto.setContentPath(contentpath);
 			pathDto.setTitleHead("경로 상세 화면");

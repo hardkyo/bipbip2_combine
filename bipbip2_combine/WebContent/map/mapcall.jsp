@@ -121,7 +121,7 @@ function initialize() {
 	   searchRoute();
 	   setCoordinace5();
 	   searchRoute();
-	   alert("done"+sec2+"done");
+
    } else if(sec3==""){ 
 	   setCoordinace1();
 	   searchRoute();
@@ -130,7 +130,7 @@ function initialize() {
 	   setCoordinace6();
 	   searchRoute();
   } else if(sec3!=""){
-	   alert("done::"+sec3+"::done");
+
 	   setCoordinace1();
 	   searchRoute();
 	   setCoordinace2();
