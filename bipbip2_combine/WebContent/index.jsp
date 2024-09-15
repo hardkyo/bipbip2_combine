@@ -11,5 +11,4 @@ memberDto.setId("admin");
 session.setAttribute("loginInfo", newLoginInfo); */
 
 response.sendRedirect(root + "/admin?act=main");
-
 %>   
